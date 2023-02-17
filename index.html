@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VQMIVC-demo</title>
+  <style>
+body {
+  font-size: 20px;
+}
+audio {
+  width: 200px;
+  margin-right: 10px;
+}
+
+</style>
+</head>
+<body>
+    <h2>Audio samples - VQMIVC: Vector Quantization and Mutual Information-Based Unsupervised Speech Representation Disentanglement for One-shot Voice Conversion</h2>
+    <!--<h2>Audio samples for paper VQMIVC</h2>-->
+    <p><strong>Authors: </strong> Disong Wang, Liqun Deng, Yu Ting Yeung, Xiao Chen, Xunying Liu and Helen Meng</p>
+  
+  <hr style="height:3px;border:none;border-top:5px solid #555555;" />
+
+    <h2>VC performance of different methods</h2>
+  
+   <li>Source & target speakers (all speakers are unseen during training):</li>
+    <ul>
+        <li><strong>Source-male: p241</li>
+        <li><strong>Source-female: p238</li>
+        <li><strong>Target-male:</strong> p243</li>
+        <li><strong>Target-female:</strong> p294</li>
+    </ul> 
+
+
+    <h3>Male-to-female: Target reference utterance-<audio controls>
+       <source src="./audios/p294_001.wav" type="audio/wav">
+       </audio></h3>
+    <table border="1">
+    <tr>
+      <th>No.</th>
+      <th>Source</th>
+      <th>AutoVC</th>
+      <th>AdaIN-VC</th>
+      <th>VQVC+</th>
+      <th>VQMIVC (proposed)</th>
+      <th>w/o MI (proposed)</th>
+    </tr>
+
+    <tr>
+       <td>1</td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/0_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/0_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/0_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/0_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/0_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/0_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    <tr>
+       <td>2</td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/1_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/1_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/1_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/1_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/1_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/1_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    <tr>
+       <td>3</td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/2_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/2_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/2_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/2_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/2_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2f/2_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    </table>
+
+  <h3>Male-to-male:Target reference utterance-<audio controls>
+       <source src="./audios/p243_001.wav" type="audio/wav">
+       </audio></h3>
+    <table border="1">
+    <tr>
+      <th>No.</th>
+      <th>Source</th>
+      <th>AutoVC</th>
+      <th>AdaIN-VC</th>
+      <th>VQVC+</th>
+      <th>VQMIVC (proposed)</th>
+      <th>w/o MI (proposed)</th>
+    </tr>
+
+    <tr>
+       <td>1</td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/0_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/0_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/0_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/0_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/0_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/0_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    <tr>
+       <td>2</td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/1_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/1_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/1_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/1_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/1_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/1_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    <tr>
+       <td>3</td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/2_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/2_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/2_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/2_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/2_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/m2m/2_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    </table> 
+
+
+    <h3>Female-to-male:Target reference utterance-<audio controls>
+       <source src="./audios/p243_001.wav" type="audio/wav">
+       </audio></h3>
+    <table border="1">
+    <tr>
+      <th>No.</th>
+      <th>Source</th>
+      <th>AutoVC</th>
+      <th>AdaIN-VC</th>
+      <th>VQVC+</th>
+      <th>VQMIVC (proposed)</th>
+      <th>w/o MI (proposed)</th>
+    </tr>
+
+    <tr>
+       <td>1</td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/0_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/0_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/0_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/0_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/0_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/0_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    <tr>
+       <td>2</td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/1_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/1_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/1_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/1_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/1_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/1_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    <tr>
+       <td>3</td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/2_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/2_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/2_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/2_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/2_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2m/2_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    </table> 
+
+    
+    <h3>Female-to-female:Target reference utterance-<audio controls>
+       <source src="./audios/p294_001.wav" type="audio/wav">
+       </audio></h3>
+    <table border="1">
+    <tr>
+      <th>No.</th>
+      <th>Source</th>
+      <th>AutoVC</th>
+      <th>AdaIN-VC</th>
+      <th>VQVC+</th>
+      <th>VQMIVC (proposed)</th>
+      <th>w/o MI (proposed)</th>
+    </tr>
+
+    <tr>
+       <td>1</td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/0_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/0_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/0_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/0_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/0_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/0_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    <tr>
+       <td>2</td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/1_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/1_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/1_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/1_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/1_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/1_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    <tr>
+       <td>3</td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/2_0.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/2_1.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/2_2.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/2_3.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/2_4.wav" type="audio/wav">
+       </audio>
+       </td>
+       <td>
+       <audio controls>
+       <source src="./audios/f2f/2_5.wav" type="audio/wav">
+       </audio>
+       </td>
+    </tr>
+
+    </table> 
+       
+
+</body>
+</html>
